@@ -1,0 +1,29 @@
+nav {
+    width: 100%;
+}
+
+.menu {
+    padding: 10px;
+    background-color: darkseagreen;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu-item {
+    font-size: 1em;
+    padding: 8px;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.menu-item:hover {
+    color: white;
+    background-color: darkslateblue;
+}
+
+.active {
+    color: white;
+    background-color: darkslateblue;
+}
