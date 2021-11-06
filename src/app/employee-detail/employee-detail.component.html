@@ -1,13 +1,21 @@
+<div class="detail">
+    <div class="text-containers">
+        <div class="found" *ngIf="!deleted">
+            <h3>Employee record:</h3>
+            <p>ID: {{ employee.id }}</p>
+            <p>Name: {{ employee.name }}</p>
+            <p>Phone number: {{ employee.phoneNumber }}</p>
+            <p>Office Number: {{ employee.officeNumber }}</p>
+            <p>Position: {{ employee.position }}</p>
+            <p>Manager: {{ employee.manager }}</p>
+        </div>
+        <div class="deleted" *ngIf="deleted">
+            <p>Employee deleted.</p>
+        </div>
+    </div>
 
-<p>
-    {{ employee.id }}
-    {{ employee.name }}
-    {{ employee.phoneNumber }}
-    {{ employee.officeNumber }}
-    {{ employee.position }}
-    {{ employee.manager }}
-</p>
-
-
-<button class="btn btn-danger" >Delete</button>
-<button class="btn btn-primary" (click)="sentToHome()">Back</button>
+    <div class="button-containers">
+        <button class="btn btn-danger" (click)="remove()">Delete</button>
+        <button class="btn btn-primary" (click)="sentToHome()">Back</button>
+    </div>
+</div>

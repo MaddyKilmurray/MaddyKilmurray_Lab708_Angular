@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { DefaultPageComponent } from './default-page/default-page.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { NgModule } from '@angular/core';
@@ -6,6 +7,10 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 
 const routes: Routes = [
 
+  {
+    path: '',
+    component: HomeComponent
+  },
   {
     path: 'employee_details',
     component: EmployeeListComponent

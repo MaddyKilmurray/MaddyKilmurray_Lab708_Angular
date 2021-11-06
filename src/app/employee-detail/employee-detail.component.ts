@@ -1,7 +1,7 @@
+import { Employee } from './../models/employee.model';
 import { EmployeeService } from './../employee.service';
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Employee } from '../models/employee.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-detail',
@@ -10,14 +10,32 @@ import { Employee } from '../models/employee.model';
 })
 export class EmployeeDetailComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  employee:Employee;
+  deleted:boolean;
+
+  constructor(private router:Router,
+    private activatedRoute:ActivatedRoute,
+    private employeeService:EmployeeService) { 
+    this.employee = new Employee(0,'','',0,'',false,'');
+    this.deleted = false;
+  }
 
   ngOnInit(): void {
+    const employeeId:number = this.activatedRoute.snapshot.params['employeeId'];
+
+    this.employeeService.getEmployeeById(employeeId).subscribe(
+      result => {
+        this.employee = result;
+      }
+    )
+  }
+
+  remove() : void {
+    this.employeeService.removeEmployee(this.employee.id);
+    this.deleted = true;
   }
 
   sentToHome():void {
     this.router.navigate(['/employee_details']);
   }
-
-
 }

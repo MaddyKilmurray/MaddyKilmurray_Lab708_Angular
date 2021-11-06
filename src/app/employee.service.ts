@@ -17,10 +17,14 @@ export class EmployeeService {
   }
 
   getEmployeeById(id:number) : Observable<Employee> {
-    return this.http.get<Employee>(this.baseUrl + '/employee' + id);
+    return this.http.get<Employee>(this.baseUrl + '/employee/' + id);
   }
 
-  removeEmployee(employee:Employee) : void {
-    this.http.delete<Employee>(this.baseUrl + '/employee')
+  removeEmployee(id:number) : void {
+    this.http.delete<Employee>(this.baseUrl + '/employee/' + id).subscribe(
+      data => {
+        console.log("deleted");
+      }
+    );
   }
 }

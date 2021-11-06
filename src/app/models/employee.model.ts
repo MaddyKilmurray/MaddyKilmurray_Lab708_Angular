@@ -1,4 +1,10 @@
 export class Employee {
+    public get imgUrl(): string {
+        return this._imgUrl;
+    }
+    public set imgUrl(value: string) {
+        this._imgUrl = value;
+    }
     public get manager(): boolean {
         return this._manager;
     }
@@ -42,6 +48,7 @@ export class Employee {
         private _phoneNumber: string,
         private _officeNumber: number,
         private _position: string,
-        private _manager: boolean 
+        private _manager: boolean,
+        private _imgUrl: string
     ){}
 }

@@ -11,6 +11,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DefaultPageComponent } from './default-page/default-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DefaultPageComponent } from './default-page/default-page.component';
     FooterComponent,
     EmployeeListItemComponent,
     EmployeeDetailComponent,
-    DefaultPageComponent
+    DefaultPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

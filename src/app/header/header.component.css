@@ -4,7 +4,7 @@ nav {
 
 .menu {
     padding: 10px;
-    background-color: darkseagreen;
+    background-color: #FFBE0B;
 }
 
 .menu li {
@@ -20,10 +20,12 @@ nav {
 
 .menu-item:hover {
     color: white;
-    background-color: darkslateblue;
+    background-color: #8338EC;
+    border-radius: 5px;
 }
 
 .active {
     color: white;
-    background-color: darkslateblue;
+    background-color: #8338EC;
+    border-radius: 5px;
 }
